@@ -1,10 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Card } from '../model/card';
+import { CardService } from '../card.service';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+  styleUrls: ['./home-page.component.css'],
 })
-export class HomePageComponent {
+export class HomePageComponent implements OnInit {
+  constructor(private cardService: CardService) {}
 
+  cardToDiplay: Card[] = [];
+
+  ngOnInit(): void {
+    this.cardService.getCards().subscribe((dataCards) => {
+      console.log('Affichage des cartes => ', dataCards);
+      this.cardToDiplay = [...dataCards];
+    });
+  }
 }
