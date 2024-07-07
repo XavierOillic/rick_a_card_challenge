@@ -1,9 +1,9 @@
 <div class="entete">
   <div><h1>RICK & MORTY</h1></div>
   <div>
-    <app-button [title]="playButton" (click)="displayCard()"></app-button>
+    <app-button [title]="playButton" (click)="displayTheCard()"></app-button>
   </div>
-  <div>
-    <div *ngIf="cardToDiplay"></div>
+  <div *ngIf="cardToDiplay">
+    <app-card [card]="cardToDiplay"></app-card>
   </div>
 </div>

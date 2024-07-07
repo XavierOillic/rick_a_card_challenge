@@ -15,15 +15,15 @@ export class CardService {
   idCard!: number;
   getRandomCard(min: number, max: number) {
     this.idCard = Math.floor(Math.random() * (max - min) + min);
-    console.log(this.idCard);
+    //console.log(this.idCard);
     return this.idCard;
   }
 
   // Mon service qui appelle la méthode de pickup aléatoire.
   urlApi = 'https://rickandmortyapi.com/api/character';
-  getOneCard(): Observable<Card[]> {
+  getOneCard(): Observable<Card> {
     this.getRandomCard(this.min, this.max);
-    return this.http.get<Card[]>(`${this.urlApi}/${this.idCard}`);
+    return this.http.get<Card>(`${this.urlApi}/${this.idCard}`);
   }
 
   card!: string;
@@ -33,16 +33,21 @@ export class CardService {
   setCardInLs(a: any, b: any) {
     localStorage.setItem(a, b);
   }
+
   setCardStringify(a: any, b: any) {
-    localStorage.setItem(a, JSON.stringify(b));
+    //localStorage.setItem(a, JSON.stringify(b));
+    this.storeInTabLs(a, b);
   }
 
-  myCard!: any;
-  getCardFromLs() {
-    const dataFromLs = localStorage.getItem('card');
-    if (dataFromLs) {
-      this.myCard = dataFromLs;
+  storeInTabLs(a: any, b: Card) {
+    let tabCard: Card[] = [];
+    const dataFromLs = localStorage.getItem(a);
+    console.log('condition', dataFromLs);
+    if (dataFromLs != null) {
+      tabCard = JSON.parse(dataFromLs);
     }
-    return this.myCard;
+    tabCard.push(b);
+    let tableauStringifie = JSON.stringify(tabCard);
+    localStorage.setItem(a, tableauStringifie);
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Card } from '../model/card';
 import { CardService } from '../card.service';
 
@@ -11,14 +11,17 @@ export class HomePageComponent implements OnInit {
   playButton: string = 'CLICK TO PLAY DISPLAY!';
   constructor(private cardService: CardService) {}
 
-  cardToDiplay: Card[] = [];
+  cardToDiplay!: Card;
 
-  displayCard() {
+  displayIf() {}
+
+  // méthode du bouton : affiche et store in localStorage.
+  displayTheCard() {
     this.cardService.getOneCard().subscribe((dataCard) => {
       console.log("Affichage d'une carte => ", dataCard);
       this.cardToDiplay = dataCard;
+      this.cardService.setCardStringify('picked up Card', dataCard);
     });
-    this.cardService.setCardStringify('picked up Card :', this.cardToDiplay);
   }
 
   ngOnInit(): void {}
