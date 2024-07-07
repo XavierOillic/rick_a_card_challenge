@@ -8,6 +8,7 @@ import { CardService } from '../card.service';
   styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent implements OnInit {
+  playButton: string = 'CLICK TO PLAY DISPLAY!';
   constructor(private cardService: CardService) {}
 
   cardToDiplay: Card[] = [];
