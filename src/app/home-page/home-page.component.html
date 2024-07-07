@@ -2,7 +2,11 @@
   <div><h1>RICK & MORTY</h1></div>
   <div>
     <h1>Countdown Timer: {{ countdown }} seconds</h1>
-    <app-button [title]="playButton" (click)="displayTheCard()"></app-button>
+    <app-button
+      #btn
+      [title]="playButton"
+      (click)="displayTheCard()"
+    ></app-button>
   </div>
   <div *ngIf="cardToDiplay">
     <app-card [card]="cardToDiplay"></app-card>
