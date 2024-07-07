@@ -8,10 +8,17 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { IconComponent } from './components/icon/icon.component';
 import { CardComponent } from './components/card/card.component';
 import { ButtonComponent } from './components/button/button.component';
+import { CdTimerModule } from 'angular-cd-timer';
 
 @NgModule({
-  declarations: [AppComponent, HomePageComponent, IconComponent, CardComponent, ButtonComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    HomePageComponent,
+    IconComponent,
+    CardComponent,
+    ButtonComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, CdTimerModule],
   providers: [],
   bootstrap: [AppComponent],
 })
