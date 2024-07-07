@@ -39,9 +39,6 @@ export class HomePageComponent implements OnInit {
         this.cardToDiplay = dataCard;
         this.cardService.setCardStringify('picked up Card', dataCard);
       });
-    } else {
-      clearInterval(this.interval);
-      this.startCountdown();
     }
   }
 
