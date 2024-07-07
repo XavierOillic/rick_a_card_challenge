@@ -13,10 +13,13 @@ export class HomePageComponent implements OnInit {
 
   cardToDiplay: Card[] = [];
 
-  ngOnInit(): void {
+  displayCard() {
     this.cardService.getOneCard().subscribe((dataCard) => {
       console.log("Affichage d'une carte => ", dataCard);
       this.cardToDiplay = dataCard;
     });
+    this.cardService.setCardStringify('picked up Card :', this.cardToDiplay);
   }
+
+  ngOnInit(): void {}
 }

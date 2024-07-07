@@ -1,13 +1,9 @@
 <div class="entete">
   <div><h1>RICK & MORTY</h1></div>
-  <div><app-button [title]="playButton"></app-button></div>
   <div>
-    <div *ngIf="cardToDiplay">
-      <!--
-      <app-card *ngFor="let c of cardToDiplay" [card]="c"></app-card>
-    </div>
-    -->
-      <app-card></app-card>
-    </div>
+    <app-button [title]="playButton" (click)="displayCard()"></app-button>
+  </div>
+  <div>
+    <div *ngIf="cardToDiplay"></div>
   </div>
 </div>

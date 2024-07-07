@@ -9,6 +9,7 @@ import { Card } from './model/card';
 export class CardService {
   constructor(private http: HttpClient) {}
 
+  // Me créer un chiffre entier aléatoire entre 0 et 826.
   min: number = 0;
   max: number = 826;
   idCard!: number;
@@ -18,8 +19,8 @@ export class CardService {
     return this.idCard;
   }
 
+  // Mon service qui appelle la méthode de pickup aléatoire.
   urlApi = 'https://rickandmortyapi.com/api/character';
-
   getOneCard(): Observable<Card[]> {
     this.getRandomCard(this.min, this.max);
     return this.http.get<Card[]>(`${this.urlApi}/${this.idCard}`);
@@ -33,7 +34,7 @@ export class CardService {
     localStorage.setItem(a, b);
   }
   setCardStringify(a: any, b: any) {
-    JSON.stringify(localStorage.setItem(a, b));
+    localStorage.setItem(a, JSON.stringify(b));
   }
 
   myCard!: any;
