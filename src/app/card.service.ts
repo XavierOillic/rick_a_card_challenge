@@ -9,17 +9,20 @@ import { Card } from './model/card';
 export class CardService {
   constructor(private http: HttpClient) {}
 
-  urlApi: string = 'https://rickandmortyapi.com/api/character/0,1,2,3,4,5';
-  idCard!: number[];
-  //METTRE UN RANDOM NUMERIQUE DE 0 à 386. ET l'INSERER DANS LA VARIABLE URL ??!
-
-  getCards(): Observable<Card[]> {
-    return this.http.get<Card[]>(this.urlApi);
+  min: number = 0;
+  max: number = 826;
+  idCard!: number;
+  getRandomCard(min: number, max: number) {
+    this.idCard = Math.floor(Math.random() * (max - min) + min);
+    console.log(this.idCard);
+    return this.idCard;
   }
 
+  urlApi = 'https://rickandmortyapi.com/api/character';
+
   getOneCard(): Observable<Card[]> {
-    //return this.http.get<Card[]>(`]this.urlApi/${this.idCard}`);
-    return this.http.get<Card[]>(`]this.urlApi`);
+    this.getRandomCard(this.min, this.max);
+    return this.http.get<Card[]>(`${this.urlApi}/${this.idCard}`);
   }
 
   card!: string;

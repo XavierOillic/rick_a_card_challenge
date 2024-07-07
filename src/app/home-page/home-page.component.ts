@@ -14,9 +14,9 @@ export class HomePageComponent implements OnInit {
   cardToDiplay: Card[] = [];
 
   ngOnInit(): void {
-    this.cardService.getCards().subscribe((dataCards) => {
-      console.log('Affichage des cartes => ', dataCards);
-      this.cardToDiplay = [...dataCards];
+    this.cardService.getOneCard().subscribe((dataCard) => {
+      console.log("Affichage d'une carte => ", dataCard);
+      this.cardToDiplay = dataCard;
     });
   }
 }

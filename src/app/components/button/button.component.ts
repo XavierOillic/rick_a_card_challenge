@@ -14,12 +14,5 @@ export class ButtonComponent implements OnInit {
   cardToDiplay: Card[] = [];
   idCard!: number;
 
-  displayCard() {
-    this.cardService.getOneCard().subscribe((dataCard) => {
-      console.log("Affichage d'une carte =>", dataCard);
-      this.cardToDiplay = [...dataCard];
-    });
-  }
-
   ngOnInit(): void {}
 }

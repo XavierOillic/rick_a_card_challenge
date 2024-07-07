@@ -5,8 +5,8 @@ export interface Card {
   species: string;
   type: string;
   gender: string;
-  origin: {};
-  location: {};
+  origin: { name: string; linkLocation: string };
+  location: { name: string; linkLocation: string };
   image: string;
   episode: [];
   url: string;
