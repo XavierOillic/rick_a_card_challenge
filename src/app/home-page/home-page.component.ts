@@ -21,7 +21,7 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  //*********** SERVICE METHOD: display and store in localStorage the card ***********
+  //*********** SERVICE METHOD: display and store in localStorage the card *********** */
   serviceDisplay() {
     this.cardService.getOneCard().subscribe((dataCard) => {
       console.log("Affichage d'une carte => ", dataCard);
@@ -38,7 +38,6 @@ export class HomePageComponent implements OnInit {
         this.countdown--;
       } else {
         clearInterval(interval);
-        console.log('quesquispass ');
       }
     }, 1000);
     this.countdown = 10;
@@ -69,18 +68,4 @@ setTimeout(() => {
   console.log("Delayed for 10 second.");
   // le code ici est lancé 10 secondes après.
 }, "10000");
-
-
-
-
-  startCountdown() {
-    this.interval = setInterval(() => {
-      if (this.countdown > 0) {
-        this.countdown--;
-      } else {
-        clearInterval(this.interval);
-        //alert('Countdown is over, you can pick one card!');
-      }
-    }, 1000); // Update the countdown every 1 second (1000 ms)
-  }
 */
