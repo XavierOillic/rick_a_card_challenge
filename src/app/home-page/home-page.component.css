@@ -1,10 +1,15 @@
 .countdown_button {
   margin: auto 0px;
-  padding: 10px;
+  padding: 10%;
   display: flex;
   background-color: aqua;
 }
 
 .countdown_text {
-  margin-right: 30px;
+  margin-left: 50px;
+}
+
+.card {
+  background-color: blueviolet;
+  margin: auto 0px;
 }

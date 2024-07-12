@@ -1,12 +1,6 @@
 <div class="entete">
   <div><h1>RICK & MORTY</h1></div>
   <div class="countdown_button">
-    <div class="countdown_text">
-      <h1>
-        You can "play" again in : <br />
-        {{ countdown }} seconds
-      </h1>
-    </div>
     <div>
       <app-button
         #btn
@@ -14,6 +8,12 @@
         [buttonDisabled]="buttonDisabled"
         (click)="displayTheCard()"
       ></app-button>
+    </div>
+    <div class="countdown_text">
+      <h1>
+        You can "play" again <br />
+        in : {{ countdown }} seconds !
+      </h1>
     </div>
   </div>
   <div *ngIf="cardToDiplay">
