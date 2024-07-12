@@ -11,6 +11,8 @@ export class ButtonComponent implements OnInit {
   constructor(private cardService: CardService) {}
 
   @Input() title: string = '';
+  @Input() buttonDisabled!: Boolean;
+
   cardToDiplay: Card[] = [];
   idCard!: number;
 

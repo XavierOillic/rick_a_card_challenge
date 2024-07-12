@@ -9,10 +9,6 @@ export class IconComponent {
   @Input() iconName:
     | 'trash'
     | 'heart'
-    | 'heart-fill'
-    | 'sun'
-    | 'sun-fill'
-    | 'droplet'
     | 'pencil'
     | 'x-circle'
     | 'droplet-fill' = 'heart';

@@ -1,0 +1,14 @@
+.image {
+  border: 10px, solid pink;
+}
+
+.display_items {
+  display: flex;
+}
+.line_display {
+  padding: 5px;
+  margin: 5px;
+  border: 5px, solid pink;
+  border-radius: 5px;
+  background-color: rgb(223, 223, 223);
+}

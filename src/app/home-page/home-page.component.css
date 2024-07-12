@@ -1,0 +1,10 @@
+.countdown_button {
+  margin: auto 0px;
+  padding: 10px;
+  display: flex;
+  background-color: aqua;
+}
+
+.countdown_text {
+  margin-right: 30px;
+}

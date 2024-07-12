@@ -1,14 +1,22 @@
 <div class="entete">
   <div><h1>RICK & MORTY</h1></div>
-  <div>
-    <h1>Countdown Timer: {{ countdown }} seconds</h1>
-    <app-button
-      #btn
-      [title]="playButton"
-      (click)="displayTheCard()"
-    ></app-button>
+  <div class="countdown_button">
+    <div class="countdown_text">
+      <h1>
+        You can "play" again in : <br />
+        {{ countdown }} seconds
+      </h1>
+    </div>
+    <div>
+      <app-button
+        #btn
+        [title]="playButton"
+        [buttonDisabled]="buttonDisabled"
+        (click)="displayTheCard()"
+      ></app-button>
+    </div>
   </div>
   <div *ngIf="cardToDiplay">
-    <app-card [card]="cardToDiplay"></app-card>
+    <app-card class="card" [card]="cardToDiplay"></app-card>
   </div>
 </div>
