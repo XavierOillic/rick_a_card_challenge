@@ -1,5 +1,5 @@
-<div class="entete">
-  <div><h1>RICK & MORTY</h1></div>
+<div>
+  <div class="div_title"><h1 class="title">RICK & MORTY</h1></div>
   <div class="countdown_button">
     <div>
       <app-button
@@ -11,8 +11,9 @@
     </div>
     <div class="countdown_text">
       <h1>
-        You can "play" again <br />
-        in : {{ countdown }} seconds !
+        {{ canOrCannot }}
+        <br />
+        {{ countdown }} seconds !
       </h1>
     </div>
   </div>

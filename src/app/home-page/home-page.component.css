@@ -1,3 +1,10 @@
+.div_title {
+  padding: 2%;
+  background-color: aqua;
+}
+.title {
+  background-color: aqua;
+}
 .countdown_button {
   margin: auto 0px;
   padding: 10%;
@@ -7,9 +14,4 @@
 
 .countdown_text {
   margin-left: 50px;
-}
-
-.card {
-  background-color: blueviolet;
-  margin: auto 0px;
 }

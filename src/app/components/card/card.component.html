@@ -1,7 +1,4 @@
 <div class="card" *ngIf="card">
-  <div>
-    <div><img class="image" [src]="card.image" /></div>
-  </div>
   <div class="display_items">
     <div class="line_display">
       ▹ ID : <strong>{{ card.id }}</strong>
@@ -10,6 +7,10 @@
       ▹ NAME : <strong>{{ card.name }}</strong>
     </div>
   </div>
+  <div>
+    <div><img class="image" [src]="card.image" /></div>
+  </div>
+
   <div class="display_items">
     <div class="line_display">
       ▹ ALIVE ? <strong>{{ card.status }}</strong>
@@ -24,14 +25,6 @@
     </div>
     <div class="line_display">
       ▹ SPECIES : <strong>{{ card.species }}</strong>
-    </div>
-  </div>
-  <div>
-    <div class="line_display">
-      ▹ WHICH EPISOD ? <strong>{{ card.episode }}</strong>
-    </div>
-    <div class="line_display">
-      ▹ FROM WHERE ? <strong>{{ card.location.name }}</strong>
     </div>
   </div>
 </div>

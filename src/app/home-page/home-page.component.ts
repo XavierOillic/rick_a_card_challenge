@@ -14,12 +14,19 @@ export class HomePageComponent implements OnInit {
   playButton: string = 'CLICK TO PLAY : DISPLAY A CARD!';
   buttonDisabled: Boolean = false;
 
+  canOrCannot!: string;
+  atFirst: string = 'At first, you have to pick one card, NOOOOOWWWW !!!!!!';
+  canPlay: string = ' So pick one, and wait for :';
+  canNotPlay: string = ' You have to wait for : ';
+
   countdown: number = 10; // Set the initial countdown value (in seconds)
   //interval: any;
 
   //************************************************************************* */
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.canOrCannot = this.atFirst;
+  }
 
   //*********** SERVICE METHOD: display and store in localStorage the card *********** */
   serviceDisplay() {
@@ -35,9 +42,11 @@ export class HomePageComponent implements OnInit {
   startCountdown() {
     const interval = setInterval(() => {
       if (this.countdown > 0) {
+        this.canOrCannot = this.canNotPlay;
         this.countdown--;
       } else {
         clearInterval(interval);
+        this.canOrCannot = this.canPlay;
       }
     }, 1000);
     this.countdown = 10;
@@ -48,7 +57,7 @@ export class HomePageComponent implements OnInit {
   timing() {
     this.buttonDisabled = true;
     setTimeout(() => {
-      this.buttonDisabled = false;
+      this.buttonDisabled = false; // accompli cette action une fois AU BOUT de 10 secondes.
     }, 10000);
   }
 
