@@ -3,11 +3,12 @@
   background-color: aqua;
 }
 .title {
+  margin-left: 30%;
   background-color: aqua;
 }
 .countdown_button {
   margin: auto 0px;
-  padding: 10%;
+  padding: 2%;
   display: flex;
   background-color: aqua;
 }
